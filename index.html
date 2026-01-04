@@ -1,0 +1,962 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A.P Tech Consulting Services</title>
+    <meta name="description" content="AP TECH Consulting is your Durban-based partner for device repair, upgrades, and business IT solutions.">
+    <!-- Add Font Awesome for social media icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/png" href="title_logo.png"/>
+    <style>
+        /* RESET AND BASE STYLES - IMPORTANT FIXES */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html, body {
+            width: 100%;
+            overflow-x: hidden; /* Prevents horizontal scroll */
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        ul {
+            list-style: none;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        
+        /* HEADER STYLES - FIXED FONT */
+        header {
+            background-color: transparent;
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+        
+        /* Header after scroll - Solid Blue */
+        header.scrolled {
+            background-color: #05468e;
+            padding: 15px 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* MODIFIED: Move logo to left */
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        /* ADDED: Push navigation to the right */
+        .nav-container {
+            flex: 1;
+            display: flex;
+            justify-content: flex-end;
+        }
+        
+        .logo img {
+            height: 190px;
+            transition: height 0.3s ease;
+        }
+        
+        /* Make logo smaller when scrolled */
+        header.scrolled .logo img {
+            height: 105px;
+        }
+        
+        .main-nav ul {
+            display: flex;
+            gap: 30px;
+        }
+        
+        /* IMPORTANT: FIXED NAVIGATION FONT */
+        .main-nav a {
+            color: white;
+            font-weight: 700; /* Made bolder */
+            font-size: 16px;
+            letter-spacing: 0.5px;
+            position: relative;
+            padding: 5px 0;
+            text-transform: uppercase; /* Added to match professional look */
+            font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif; /* Modern professional font */
+        }
+        
+        /* Import Montserrat font for navigation */
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap');
+        
+        /* Underline effect on hover */
+        .main-nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 3px; /* Thicker underline */
+            background-color: #0a94d6;
+            transition: width 0.3s ease;
+        }
+        
+        .main-nav a:hover::after {
+            width: 100%;
+        }
+        
+        .main-nav a:hover {
+            color: #0a94d6;
+        }
+        
+        /* HERO SECTION - COMPLETELY FIXED */
+        .hero {
+            color: white;
+            padding: 150px 0 100px;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            background-color: #05468e; /* Fallback color */
+        }
+        
+        /* NEW: Video background styling */
+        .hero-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
+            opacity: 0.75;
+        }
+        
+        /* NEW: Video overlay for better text readability */
+        .video-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to right, rgba(5, 70, 142, 0.3), rgba(5, 70, 142, 0.1));
+            z-index: 1;
+        }
+        
+        /* REMOVED: Old background image styles */
+        /*
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('hero_background.jpeg');
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+            opacity: 0.75;
+            z-index: 0;
+        }
+        
+        .parallax-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+        
+        .parallax-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 120%;
+            background-image: url('hero_background.jpeg');
+            background-size: cover;
+            background-position: center center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            opacity: 0.75;
+            z-index: 0;
+        }
+        */
+        
+        /* MODIFIED: Keep content left-aligned */
+        .hero-content {
+            max-width: 600px;
+            position: relative;
+            z-index: 2; /* Higher than video and overlay */
+            text-align: left; /* Keep left-aligned */
+            margin: 0; /* Remove auto margins */
+        }
+        
+        /* NEW: Container for vertical line and text */
+        .hero-text-container {
+            position: relative;
+            padding-left: 30px; /* Space for vertical line */
+            margin-bottom: 40px;
+        }
+        
+        /* NEW: Vertical line styling */
+        .vertical-line {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 4px; /* Thickness of vertical line */
+            height: 110px; /* Taller than both text lines */
+            background-color: white;
+            border-radius: 2px;
+        }
+        
+        /* MODIFIED: Split text onto two lines */
+        .hero-title {
+            font-size: 48px;
+            line-height: 1.2;
+            text-align: left;
+        }
+        
+        .hero-title-line1 {
+            display: block;
+            font-weight: bold;
+        }
+        
+        .hero-title-line2 {
+            display: block;
+            font-weight: bold;
+        }
+        
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: white;
+            color: #05468e;
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-weight: bold;
+            text-transform: uppercase;
+            transition: all 0.3s;
+            border: 2px solid white;
+            cursor: pointer;
+            margin-left: 30px; /* Align with text (same as padding-left) */
+        }
+        
+        .btn:hover {
+            background-color: transparent;
+            color: white;
+        }
+        
+        /* SECTION BUTTON STYLES */
+        .section-btn {
+            display: inline-block;
+            background-color: #05468e;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-weight: bold;
+            text-transform: uppercase;
+            transition: all 0.3s;
+            border: 2px solid #05468e;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        
+        /* HOVER EFFECT FOR SECTION BUTTONS - Blue to Black (Desktop only) */
+        @media (min-width: 769px) {
+            .section-btn:hover {
+                background-color: #000000 !important; /* Black background on hover */
+                color: white !important;
+                border-color: #000000 !important;
+            }
+        }
+        
+        /* Content Sections */
+        .section {
+            padding: 80px 0;
+            position: relative;
+            z-index: 3; /* Above hero background */
+            background-color: white;
+        }
+        
+        .section-alt {
+            background-color: #f8f9fa;
+        }
+        
+        .section-title {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: #05468e;
+        }
+        
+        .section-content {
+            font-size: 18px;
+            margin-bottom: 30px;
+            max-width: 600px;
+        }
+        
+        .content-row {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+        
+        .content-row.reverse {
+            flex-direction: row-reverse;
+        }
+        
+        .content-image {
+            flex: 1;
+            min-height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .content-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+        
+        .content-image:hover img {
+            transform: scale(1.03);
+        }
+        
+        .content-text {
+            flex: 1;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #05468e;
+            color: white;
+            padding: 60px 0 30px;
+            position: relative;
+            z-index: 3;
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-section {
+            flex: 1;
+            min-width: 250px;
+        }
+        
+        .footer-section h3 {
+            margin-bottom: 20px;
+            font-size: 20px;
+        }
+        
+        .footer-contact {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+        
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        /* UPDATED: Social media icon styling with logos */
+        .social-icons a {
+            display: inline-flex;
+            width: 40px;
+            height: 40px;
+            background-color: white;
+            color: #05468e;
+            border-radius: 50%;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+            font-size: 18px;
+        }
+        
+        .social-icons a:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Facebook specific color */
+        .social-icons a.facebook:hover {
+            background-color: #1877f2;
+            color: white;
+        }
+        
+        /* LinkedIn specific color */
+        .social-icons a.linkedin:hover {
+            background-color: #0077b5;
+            color: white;
+        }
+        
+        /* Instagram specific color */
+        .social-icons a.instagram:hover {
+            background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+            color: white;
+        }
+        
+        /* TikTok specific color */
+        .social-icons a.tiktok:hover {
+            background-color: #000000;
+            color: white;
+        }
+        
+        .footer-menu ul {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        
+        .footer-menu a:hover {
+            color: #0a94d6;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 14px;
+        }
+        
+        /* Mobile Menu Button - Hidden on Desktop */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+            z-index: 1001;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .content-row {
+                flex-direction: column;
+            }
+            
+            .content-row.reverse {
+                flex-direction: column;
+            }
+            
+            .hero-title {
+                font-size: 36px;
+            }
+            
+            /* Adjust vertical line for mobile */
+            .vertical-line {
+                height: 90px; /* Shorter for mobile */
+                width: 3px;
+            }
+            
+            .hero-text-container {
+                padding-left: 25px; /* Less padding on mobile */
+            }
+            
+            .btn {
+                margin-left: 25px; /* Align with mobile padding */
+            }
+            
+            /* NEW: Mobile video adjustments */
+            .hero-video {
+                opacity: 0.6; /* Slightly darker on mobile for better readability */
+            }
+            
+            .video-overlay {
+                background: linear-gradient(to right, rgba(5, 70, 142, 0.5), rgba(5, 70, 142, 0.2));
+            }
+            
+            /* Show hamburger menu on mobile */
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            /* Hide desktop menu on mobile */
+            .main-nav {
+                display: none;
+                position: fixed;
+                top: 80px;
+                left: 0;
+                width: 100%;
+                background-color: #05468e;
+                padding: 20px;
+                z-index: 1000;
+            }
+            
+            .main-nav.active {
+                display: block;
+            }
+            
+            .main-nav ul {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            /* FIXED: Navigation font on mobile */
+            .main-nav a {
+                font-size: 18px; /* Slightly larger on mobile */
+                display: block;
+                padding: 10px 0;
+            }
+            
+            /* Initial state for mobile - solid header */
+            header {
+                background-color: #05468e;
+                padding: 15px 0;
+            }
+            
+            /* Ensure hero content is properly spaced on mobile */
+            .hero-content {
+                padding: 0 20px;
+            }
+            
+            /* Mobile button hover effect - subtle darkening */
+            .section-btn:active {
+                background-color: #000000 !important;
+                color: white !important;
+                border-color: #000000 !important;
+            }
+            
+            /* Adjust logo size on mobile */
+            .logo img {
+                height: 100px;
+            }
+            
+            header.scrolled .logo img {
+                height: 70px;
+            }
+            
+            /* Adjust social icons for mobile */
+            .social-icons {
+                gap: 12px;
+            }
+            
+            .social-icons a {
+                width: 36px;
+                height: 36px;
+                font-size: 16px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: 28px;
+            }
+            
+            .vertical-line {
+                height: 70px; /* Even shorter for small phones */
+                width: 3px;
+            }
+            
+            .hero-text-container {
+                padding-left: 20px; /* Less padding on very small screens */
+            }
+            
+            .btn {
+                margin-left: 20px; /* Align with mobile padding */
+                padding: 10px 25px; /* Slightly smaller button on mobile */
+            }
+            
+            .section-title {
+                font-size: 28px;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+            }
+            
+            .hero {
+                padding-top: 120px; /* Less padding on very small screens */
+            }
+            
+            /* Smaller logo on very small screens */
+            .logo img {
+                height: 80px;
+            }
+            
+            header.scrolled .logo img {
+                height: 60px;
+            }
+            
+            /* Adjust social icons for very small screens */
+            .social-icons {
+                gap: 10px;
+            }
+            
+            .social-icons a {
+                width: 34px;
+                height: 34px;
+                font-size: 15px;
+            }
+            
+            /* Even darker video on very small screens */
+            .hero-video {
+                opacity: 0.5;
+            }
+            
+            .video-overlay {
+                background: linear-gradient(to right, rgba(5, 70, 142, 0.6), rgba(5, 70, 142, 0.3));
+            }
+        }
+        
+        /* Smooth scroll behavior */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header id="mainHeader">
+        <div class="container header-container">
+            <div class="logo">
+                <a href="#home">
+                    <img src="logo3.png" alt="A.P Tech Consulting Services Logo">
+                </a>
+            </div>
+            <div class="nav-container">
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#contact">Contact Us</a></li>
+                    </ul>
+                </nav>
+                <button class="mobile-menu-btn">☰</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section with Video Background -->
+    <section id="home" class="hero">
+        <!-- Video Background -->
+        <video class="hero-video" autoplay muted loop playsinline>
+            <source src="background_vid.mp4" type="video/mp4">
+            <!-- Fallback image if video doesn't load -->
+            <img src="hero_background.jpeg" alt="Fallback background" style="width: 100%; height: 100%; object-fit: cover;">
+        </video>
+        
+        <!-- Video overlay for better text readability -->
+        <div class="video-overlay"></div>
+        
+        <div class="container">
+            <div class="hero-content">
+                <!-- Container with vertical line and text -->
+                <div class="hero-text-container">
+                    <!-- Vertical line -->
+                    <div class="vertical-line"></div>
+                    
+                    <!-- Two-line text -->
+                    <div class="hero-title">
+                        <span class="hero-title-line1">WE CONSULT,</span>
+                        <span class="hero-title-line2">YOU CONQUER</span>
+                    </div>
+                </div>
+                
+                <!-- Left-aligned button -->
+                <a href="#about" class="btn">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Who We Are -->
+    <section id="about" class="section">
+        <div class="container">
+            <div class="content-row">
+                <div class="content-image">
+                    <img src="who_are_we.webp" alt="Team Meeting at The A.P Tech Consulting Services">
+                </div>
+                <div class="content-text">
+                    <h2 class="section-title">Who we are</h2>
+                    <p class="section-content">We are a comprehensive solution provider, bridging the gap between immediate technical troubleshooting and long-term strategic IT planning. Our services are structured to assist clients at every level of need, from the individual user facing a device emergency; such as a blank screen, forgotten password, or data loss; to the business owner requiring system setup and scalability advice. By offering everything from remote phone support and in-person hardware upgrades to strategic consulting, We are a reliable, all-in-one partner for both personal technology repair and foundational business IT infrastructure, ensuring our clients' devices and systems operate smoothly and efficiently.</p>
+                    <a href="more_about_us.html" class="section-btn">More About Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What We Do -->
+    <section id="services" class="section section-alt">
+        <div class="container">
+            <div class="content-row reverse">
+                <div class="content-image">
+                    <img src="what_we_do.jpeg" alt="Business Strategy Consulting">
+                </div>
+                <div class="content-text">
+                    <h2 class="section-title">What we do</h2>
+                    <p class="section-content">AP TECH Consulting Services delivers a full spectrum of technical support and IT solutions tailored to both individual consumers and businesses. Our core activities are neatly categorized into four key areas. Firstly, we provide immediate "Over the Phone Help" to diagnose and resolve urgent issues like blank screens, boot loops, and password resets. Secondly, we perform physical "Upgrades & Repairs" to address hardware problems such as slow performance, battery replacement, RAM upgrades, and overheating. Thirdly, we offer strategic "Systems & Scalability" consulting to help new or expanding businesses set up and scale their operational technology infrastructure. Finally, we ensure accessibility by being a local Durban-based resource, offering convenient contact channels via email and WhatsApp for support and service inquiries. In essence, we fix, improve, build, and support the technology that our clients depend on.</p>
+                    <a href="our_focus.html" class="section-btn">Our Focus</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Expertise -->
+    <section class="section">
+        <div class="container">
+            <div class="content-row">
+                <div class="content-image">
+                    <img src="our_expertise.jpeg" alt="Expert Team of Consultants">
+                </div>
+                <div class="content-text">
+                    <h2 class="section-title">Our Expertise</h2>
+                    <p class="section-content">AP TECH Consulting Services has cultivated a distinct expertise in end-to-end technological problem-solving and strategic growth support. Our proficiency spans from critical, hands-on technical intervention to forward-looking business infrastructure planning. Our team is skilled in rapid diagnostic troubleshooting for urgent hardware and software failures; such as boot loops, data recovery, and power issues, ensuring minimal downtime for clients. Furthermore, we possess deep practical knowledge in hardware optimization, effectively resolving performance bottlenecks through upgrades like RAM installation and overheating mitigation. Beyond device-level support, our true strategic expertise lies in designing and scaling foundational IT systems for businesses, guiding them from initial setup through expansion.</p>
+                    <a href="our_leadership.html" class="section-btn">Our Leadership</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Mission -->
+    <section class="section section-alt">
+        <div class="container">
+            <div class="content-row reverse">
+                <div class="content-image">
+                    <img src="our_mission.jpeg" alt="Company Mission and Values">
+                </div>
+                <div class="content-text">
+                    <h2 class="section-title">Our Mission</h2>
+                    <p class="section-content">Empowering individuals and businesses by removing technological barriers and enabling growth. WE CONSULT, YOU CONQUER.</p>
+                    <a href="our_values.html" class="section-btn">Our Values</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Us -->
+    <section id="contact" class="section">
+        <div class="container">
+            <div class="content-row reverse">
+                <div class="content-image">
+                    <img src="contact_us.jpeg" alt="Contact A.P Tech Consulting Services">
+                </div>
+                <div class="content-text">
+                    <h2 class="section-title">Contact Us</h2>
+                    <p class="section-content">If you'd like to contact us or learn more about AP TECH Consulting Services, please click the link below or feel free to call us at <a href="tel:+27691304420" style="color: #05468e; font-weight: bold;">+27 (069) 130-4420</a>.</p>
+                    <a href="contact_form.html" class="section-btn">Get in Touch</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Contact Information</h3>
+                    <div class="footer-contact">
+                        <span>📱</span>
+                        <span><a href="tel:+27691304420">+27 (069) 130-4420</a></span>
+                    </div>
+                    <div class="footer-contact">
+                        <span>✉️</span>
+                        <span><a href="mailto:aptechconsultingservices@gmail.com">aptechconsultingservices@gmail.com</a></span>
+                    </div>
+                    <div class="social-icons">
+                        <!-- UPDATED: Facebook with logo -->
+                        <a href="https://www.facebook.com/" class="facebook" target="_blank" title="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <!-- UPDATED: LinkedIn with logo -->
+                        <a href="https://www.linkedin.com/" class="linkedin" target="_blank" title="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <!-- ADDED: Instagram with logo -->
+                        <a href="https://www.instagram.com/" class="instagram" target="_blank" title="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <!-- ADDED: TikTok with logo -->
+                        <a href="https://www.tiktok.com/@aptechconsulting?_r=1&_t=ZS-92mGrlAtH67" class="tiktok" target="_blank" title="TikTok">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <nav class="footer-menu">
+                        <ul>
+                            <li><a href="#home">Home</a></li>
+                            <!-- UPDATED: About Us link -->
+                            <li><a href="more_about_us.html">About Us</a></li>
+                            <!-- UPDATED: Services link -->
+                            <li><a href="our_focus.html">Services</a></li>
+                            <!-- UPDATED: Contact Us link -->
+                            <li><a href="contact_form.html">Contact Us</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Our Location</h3>
+                    <div class="footer-contact">
+                        <span>📍</span>
+                        <span>A.P Tech Consulting Services<br>Durban<br>ZA</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <!-- MODIFIED: Updated link to Ts_and_Cs.html -->
+                <p>© 2026, A.P Tech Consulting Services. <a href="Ts_and_Cs.html" style="color: white; text-decoration: underline;">Privacy | Terms & Conditions</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const mainNav = document.querySelector('.main-nav');
+        const header = document.getElementById('mainHeader');
+        
+        mobileMenuBtn.addEventListener('click', function() {
+            mainNav.classList.toggle('active');
+            this.textContent = mainNav.classList.contains('active') ? '✕' : '☰';
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.main-nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                mainNav.classList.remove('active');
+                mobileMenuBtn.textContent = '☰';
+            });
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    e.preventDefault();
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // NEW: Video background handling
+        const heroVideo = document.querySelector('.hero-video');
+        
+        // Ensure video plays automatically (some browsers require user interaction)
+        document.addEventListener('DOMContentLoaded', function() {
+            const playPromise = heroVideo.play();
+            
+            if (playPromise !== undefined) {
+                playPromise.catch(error => {
+                    console.log("Video autoplay failed, trying muted play:", error);
+                    heroVideo.muted = true;
+                    heroVideo.play();
+                });
+            }
+        });
+
+        // Handle header transparency
+        window.addEventListener('scroll', function() {
+            const scrolled = window.pageYOffset;
+            
+            // Header transparency effect
+            if (scrolled > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Initialize on load
+        window.addEventListener('load', function() {
+            // Check if we're at the top of the page
+            if (window.pageYOffset > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+            
+            // Ensure video covers full width
+            heroVideo.style.width = '100%';
+            heroVideo.style.left = '0';
+        });
+
+        // Handle window resize
+        window.addEventListener('resize', function() {
+            const isMobile = window.innerWidth <= 768;
+            
+            // On mobile, header should always be solid
+            if (isMobile) {
+                header.style.backgroundColor = '#05468e';
+            } else {
+                // Reset header transparency on desktop
+                if (window.pageYOffset <= 50) {
+                    header.style.backgroundColor = 'transparent';
+                }
+            }
+        });
+
+        // Image lazy loading effect (optional)
+        document.addEventListener('DOMContentLoaded', function() {
+            const images = document.querySelectorAll('.content-image img');
+            
+            const imageObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        img.style.opacity = '0';
+                        setTimeout(() => {
+                            img.style.opacity = '1';
+                            img.style.transition = 'opacity 0.5s ease';
+                        }, 100);
+                        observer.unobserve(img);
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+            
+            images.forEach(img => imageObserver.observe(img));
+        });
+    </script>
+</body>
+</html>

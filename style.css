@@ -1,0 +1,170 @@
+/* ================= RESET ================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures perfect cropping like in the video */
+  display: block;
+}
+
+body {
+  font-family: system-ui, sans-serif;
+  background: #fff;
+  color: #111;
+}
+
+/* ================= LAYOUT ================= */
+
+.container {
+  max-width: 1200px;
+  padding: 1.25rem;
+  margin: 0 auto;
+}
+
+/* ================= HEADER ================= */
+
+.header {
+  position: sticky;
+  top: 0;
+  background: #fff;
+  border-bottom: 1px solid #eee;
+  z-index: 1000;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  width: 140px; /* Matches typical video logo size */
+  height: 40px;
+}
+
+.nav-links {
+  display: none;
+  gap: 2rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #111;
+  font-weight: 500;
+}
+
+.menu-toggle {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+}
+
+/* ================= HERO ================= */
+
+.hero {
+  padding: 4rem 0;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.hero-text h1 {
+  font-size: 2.25rem;
+  margin-bottom: 1rem;
+}
+
+.hero-text p {
+  max-width: 520px;
+  margin-bottom: 1.5rem;
+}
+
+.primary-btn {
+  padding: 0.75rem 1.75rem;
+  background: #111;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.primary-btn:hover {
+  transform: translateY(-2px);
+}
+
+.hero-image {
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+}
+
+/* ================= CARDS ================= */
+
+.section {
+  padding: 4rem 0;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+.card {
+  padding: 2rem;
+  border: 1px solid #eee;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+}
+
+.card-image {
+  height: 180px;
+  margin-bottom: 1.25rem;
+  overflow: hidden;
+}
+
+/* ================= FOOTER ================= */
+
+.footer {
+  background: #111;
+  color: #fff;
+  padding: 2rem 0;
+}
+
+.footer-logo {
+  width: 120px;
+  height: 35px;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (min-width: 768px) {
+
+  .nav-links {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: none;
+  }
+
+  .hero-content {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
