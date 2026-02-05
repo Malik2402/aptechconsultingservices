@@ -1,0 +1,926 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services - A.P Tech Consulting Services</title>
+    <meta name="description" content="Discover A.P Tech Consulting Services - IT consulting, technical support, and repairs. Professional tech services tailored to your needs.">
+    <!-- Add Font Awesome for social media icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="icon" type="image/png" href="title_logo.png"/>
+    
+    <style>
+        /* RESET AND BASE STYLES - IMPORTANT FIXES */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html, body {
+            width: 100%;
+            overflow-x: hidden; /* Prevents horizontal scroll */
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        ul {
+            list-style: none;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        
+        /* HEADER STYLES - ALWAYS BLUE BACKGROUND */
+        header {
+            background-color: #05468e; /* Blue background from beginning */
+            padding: 1px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* MODIFIED: Move logo to left */
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        /* ADDED: Push navigation to the right */
+        .nav-container {
+            flex: 1;
+            display: flex;
+            justify-content: flex-end;
+        }
+        
+        .logo img {
+            height: 150px;
+            transition: height 0.3s ease;
+        }
+        
+        .main-nav ul {
+            display: flex;
+            gap: 30px;
+        }
+        
+        /* IMPORTANT: FIXED NAVIGATION FONT */
+        .main-nav a {
+            color: white;
+            font-weight: 700; /* Made bolder */
+            font-size: 16px;
+            letter-spacing: 0.5px;
+            position: relative;
+            padding: 5px 0;
+            text-transform: uppercase; /* Added to match professional look */
+            font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif; /* Modern professional font */
+            transition: color 0.3s ease; /* Added for smooth color transition */
+        }
+        
+        /* Import Montserrat font for navigation */
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap');
+        
+        /* Underline effect on hover */
+        .main-nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 3px; /* Thicker underline */
+            background-color: #0a94d6;
+            transition: width 0.3s ease;
+        }
+        
+        .main-nav a:hover::after {
+            width: 100%;
+        }
+        
+        .main-nav a:hover {
+            color: #0a94d6;
+        }
+        
+        /* ADDED: Specific hover effect for Services button in header */
+        .main-nav a.services-nav-link {
+            /* Services link should be white by default */
+            color: white;
+        }
+        
+        /* ADDED: Hover effect specifically for Services button in header */
+        .main-nav a.services-nav-link:hover {
+            color: #0a94d6; /* Blue color on hover */
+        }
+        
+        /* Mobile Menu Button - Hidden on Desktop */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+            z-index: 1001;
+        }
+        
+        /* SERVICES CONTENT STYLES - CUSTOMIZED FOR OUR FOCUS PAGE */
+        .hero-section {
+            background: linear-gradient(rgba(5, 70, 142, 0.9), rgba(5, 70, 142, 0.8)), url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1770&q=80') no-repeat center center/cover;
+            color: white;
+            padding: 180px 0 100px;
+            text-align: center;
+            margin-top: 0;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .hero-content h1 {
+            color: white;
+            font-size: 48px;
+            margin-bottom: 20px;
+            border-bottom: none;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .hero-content p {
+            font-size: 20px;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+        
+        .services-section {
+            padding: 100px 0;
+            background-color: #f9f9f9;
+        }
+        
+        .section-title {
+            text-align: center;
+            color: #05468e;
+            font-size: 36px;
+            margin-bottom: 60px;
+            position: relative;
+            padding-bottom: 20px;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background-color: #0a94d6;
+        }
+        
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+        
+        .service-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+        }
+        
+        .service-image {
+            height: 220px;
+            overflow: hidden;
+        }
+        
+        .service-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .service-card:hover .service-image img {
+            transform: scale(1.05);
+        }
+        
+        .service-content {
+            padding: 30px;
+        }
+        
+        .service-icon {
+            display: inline-block;
+            background-color: #05468e;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 60px;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        
+        .service-content h3 {
+            color: #05468e;
+            font-size: 24px;
+            margin-bottom: 15px;
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+        
+        .service-content p {
+            color: #666;
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+        
+        .service-features {
+            margin-top: 20px;
+        }
+        
+        .service-features li {
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+            color: #555;
+        }
+        
+        .service-features li:before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #0a94d6;
+            font-weight: bold;
+        }
+        
+        .cta-section {
+            background-color: #05468e;
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+        
+        .cta-content {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .cta-content h2 {
+            color: white;
+            font-size: 36px;
+            margin-bottom: 20px;
+            border-bottom: none;
+        }
+        
+        .cta-content p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: #0a94d6;
+            color: white;
+            padding: 15px 40px;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 18px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            border: 2px solid #0a94d6;
+        }
+        
+        .cta-button:hover {
+            background-color: transparent;
+            color: white;
+            border-color: white;
+        }
+        
+        .expertise-section {
+            padding: 100px 0;
+            background-color: white;
+        }
+        
+        .expertise-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .expertise-item {
+            text-align: center;
+            padding: 30px 20px;
+            border-radius: 10px;
+            background-color: #f5f9ff;
+            transition: all 0.3s ease;
+        }
+        
+        .expertise-item:hover {
+            background-color: #e8f1ff;
+            transform: translateY(-5px);
+        }
+        
+        .expertise-icon {
+            font-size: 40px;
+            color: #05468e;
+            margin-bottom: 20px;
+        }
+        
+        .expertise-item h4 {
+            color: #05468e;
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+        
+        /* FOOTER - EXACTLY FROM YOUR CODE */
+        footer {
+            background-color: #05468e;
+            color: white;
+            padding: 60px 0 30px;
+            position: relative;
+            z-index: 3;
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-section {
+            flex: 1;
+            min-width: 250px;
+        }
+        
+        .footer-section h3 {
+            margin-bottom: 20px;
+            font-size: 20px;
+            color: white;
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+        
+        .footer-contact {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+        
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        /* UPDATED: Social media icon styling with logos */
+        .social-icons a {
+            display: inline-flex;
+            width: 40px;
+            height: 40px;
+            background-color: white;
+            color: #05468e;
+            border-radius: 50%;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+            font-size: 18px;
+        }
+        
+        .social-icons a:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Facebook specific color */
+        .social-icons a.facebook:hover {
+            background-color: #1877f2;
+            color: white;
+        }
+        
+        /* LinkedIn specific color */
+        .social-icons a.linkedin:hover {
+            background-color: #0077b5;
+            color: white;
+        }
+        
+        /* Instagram specific color */
+        .social-icons a.instagram:hover {
+            background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+            color: white;
+        }
+        
+        /* TikTok specific color */
+        .social-icons a.tiktok:hover {
+            background-color: #000000;
+            color: white;
+        }
+
+        /* WhatsApp specific color */
+        .social-icons a.whatsapp:hover {
+            background-color: #25D366;
+            color: white;
+        }
+        
+        .footer-menu ul {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        
+        /* DEFAULT FOOTER LINK STYLES */
+        .footer-menu a {
+            color: white;
+            transition: color 0.3s ease;
+        }
+        
+        /* Hover effect for all footer links */
+        .footer-menu a:hover {
+            color: #0a94d6; /* Blue color on hover */
+        }
+        
+        /* ADDED: Specific Services button with hover effect */
+        .footer-menu a.services-link {
+            /* The link should be white by default like other links */
+            color: white;
+        }
+        
+        /* ADDED: Hover effect specifically for Services button */
+        .footer-menu a.services-link:hover {
+            color: #0a94d6; /* Blue color on hover */
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 14px;
+        }
+        
+        .copyright a {
+            color: white;
+            text-decoration: underline;
+        }
+        
+        .copyright a:hover {
+            color: #0a94d6;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            /* Show hamburger menu on mobile */
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            /* Hide desktop menu on mobile */
+            .main-nav {
+                display: none;
+                position: fixed;
+                top: 80px;
+                left: 0;
+                width: 100%;
+                background-color: #05468e;
+                padding: 20px;
+                z-index: 1000;
+            }
+            
+            .main-nav.active {
+                display: block;
+            }
+            
+            .main-nav ul {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            /* FIXED: Navigation font on mobile */
+            .main-nav a {
+                font-size: 18px; /* Slightly larger on mobile */
+                display: block;
+                padding: 10px 0;
+            }
+            
+            /* Services page responsive */
+            .hero-section {
+                padding: 140px 0 60px;
+            }
+            
+            .hero-content h1 {
+                font-size: 36px;
+            }
+            
+            .hero-content p {
+                font-size: 18px;
+            }
+            
+            .section-title {
+                font-size: 30px;
+                margin-bottom: 40px;
+            }
+            
+            .service-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .service-image {
+                height: 200px;
+            }
+            
+            .cta-content h2 {
+                font-size: 30px;
+            }
+            
+            /* Adjust logo size on mobile */
+            .logo img {
+                height: 100px;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+            }
+            
+            /* Adjust social icons for mobile */
+            .social-icons {
+                gap: 12px;
+            }
+            
+            .social-icons a {
+                width: 36px;
+                height: 36px;
+                font-size: 16px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero-content h1 {
+                font-size: 28px;
+            }
+            
+            .hero-content p {
+                font-size: 16px;
+            }
+            
+            .section-title {
+                font-size: 26px;
+            }
+            
+            .service-content {
+                padding: 20px;
+            }
+            
+            .service-content h3 {
+                font-size: 22px;
+            }
+            
+            .cta-button {
+                padding: 12px 30px;
+                font-size: 16px;
+            }
+            
+            /* Smaller logo on very small screens */
+            .logo img {
+                height: 80px;
+            }
+            
+            /* Adjust social icons for very small screens */
+            .social-icons {
+                gap: 10px;
+            }
+            
+            .social-icons a {
+                width: 34px;
+                height: 34px;
+                font-size: 15px;
+            }
+        }
+        
+        /* Smooth scroll behavior */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header with permanent blue background -->
+    <header id="mainHeader">
+        <div class="container header-container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="logo3.png" alt="A.P Tech Consulting Services Logo">
+                </a>
+            </div>
+            <div class="nav-container">
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="more_about_us.html">About Us</a></li>
+                        <!-- UPDATED: Services link with class for specific hover -->
+                        <li><a href="our_focus.html" class="services-nav-link">Services</a></li>
+                        <li><a href="contact_form.html">Contact Us</a></li>
+                    </ul>
+                </nav>
+                <button class="mobile-menu-btn">☰</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1>Our Technology Services</h1>
+            <p>Professional IT consulting, technical support, and repairs tailored to help your business thrive in the digital age. We provide expert guidance and hands-on support for all your technology needs.</p>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services-section">
+        <div class="container">
+            <h2 class="section-title">Our Core Services</h2>
+            
+            <div class="service-grid">
+                <!-- IT Consulting Service -->
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=1770&q=80" alt="IT Consulting">
+                    </div>
+                    <div class="service-content">
+                        <div class="service-icon">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                        <h3>IT Consulting & Strategy</h3>
+                        <p>We provide comprehensive IT consulting services to help businesses optimize their technology infrastructure, reduce costs, and improve operational efficiency through strategic planning and implementation.</p>
+                        
+                        <ul class="service-features">
+                            <li>Technology Infrastructure Assessment</li>
+                            <li>Digital Transformation Strategy</li>
+                            <li>IT Budget Planning & Optimization</li>
+                            <li>Cloud Migration Consulting</li>
+                            <li>Cybersecurity Risk Assessment</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Technical Support Service -->
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=1770&q=80" alt="Technical Support">
+                    </div>
+                    <div class="service-content">
+                        <div class="service-icon">
+                            <i class="fas fa-headset"></i>
+                        </div>
+                        <h3>Technical Support & Maintenance</h3>
+                        <p>Round-the-clock technical support and maintenance services to ensure your systems run smoothly, with minimal downtime and maximum productivity for your team.</p>
+                        
+                        <ul class="service-features">
+                            <li>24/7 Help Desk Support</li>
+                            <li>Hardware & Software Troubleshooting</li>
+                            <li>Network Setup & Maintenance</li>
+                            <li>System Updates & Patch Management</li>
+                            <li>Remote & On-Site Support</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- REMOVED: Digital Solutions Development Service -->
+                
+                <!-- Hardware Repair Service -->
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=1770&q=80" alt="Hardware Repairs">
+                    </div>
+                    <div class="service-content">
+                        <div class="service-icon">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                        <h3>Hardware Repair & Upgrades</h3>
+                        <p>Professional hardware repair, maintenance, and upgrade services for all your computing devices, from laptops and desktops to servers and network equipment.</p>
+                        
+                        <ul class="service-features">
+                            <li>Laptop & Desktop Repair</li>
+                            <li>Data Recovery Services</li>
+                            <li>Hardware Upgrades & Optimization</li>
+                            <li>Preventive Maintenance</li>
+                            <li>Component-Level Repairs</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Cybersecurity Service -->
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1770&q=80" alt="Cybersecurity">
+                    </div>
+                    <div class="service-content">
+                        <div class="service-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3>Cybersecurity Solutions</h3>
+                        <p>Protect your business from digital threats with our comprehensive cybersecurity services, including vulnerability assessments, security audits, and implementation of protective measures.</p>
+                        
+                        <ul class="service-features">
+                            <li>Security Risk Assessment</li>
+                            <li>Firewall Configuration & Management</li>
+                            <li>Malware Protection & Removal</li>
+                            <li>Security Awareness Training</li>
+                            <li>Incident Response Planning</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- REMOVED: Cloud Services Section -->
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Expertise Section -->
+    <section class="expertise-section">
+        <div class="container">
+            <h2 class="section-title">Why Choose Us</h2>
+            
+            <div class="expertise-grid">
+                <div class="expertise-item">
+                    <div class="expertise-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <h4>Expert Team</h4>
+                    <p>Certified professionals with years of industry experience</p>
+                </div>
+                
+                <div class="expertise-item">
+                    <div class="expertise-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h4>Quick Response</h4>
+                    <p>Fast turnaround times and 24/7 support availability</p>
+                </div>
+                
+                <div class="expertise-item">
+                    <div class="expertise-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h4>Client-Focused</h4>
+                    <p>Tailored solutions that address your specific business needs</p>
+                </div>
+                
+                <div class="expertise-item">
+                    <div class="expertise-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h4>Reliable Support</h4>
+                    <p>Consistent, dependable service you can count on</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="cta-section">
+        <div class="cta-content">
+            <h2>WE CONSULT, YOU CONQUER</h2>
+            <p>Contact us today for a free consultation. Let's discuss how we can help your business leverage technology for growth and success.</p>
+            <a href="contact_form.html" class="cta-button">Get In Touch</a>
+        </div>
+    </section>
+
+    <!-- Footer - EXACTLY FROM YOUR HTML CODE -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Contact Information</h3>
+                    <div class="footer-contact">
+                        <span>📱</span>
+                        <span><a href="tel:+27737840772">(073) 784-0772</a></span>
+                    </div>
+                    <div class="footer-contact">
+                        <span>✉️</span>
+                        <span><a href="mailto:aptechconsultingservices@gmail.com">aptechconsultingservices@gmail.com</a></span>
+                    </div>
+                    <div class="social-icons">
+                        <!-- UPDATED: Facebook with logo -->
+                        <a href="https://www.facebook.com/share/17oed3v66h/" class="facebook" target="_blank" title="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <!-- UPDATED: LinkedIn with logo -->
+                        <a href="https://www.linkedin.com/" class="linkedin" target="_blank" title="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <!-- ADDED: Instagram with logo -->
+                        <a href="https://www.instagram.com/aptechconsultingservices?igsh=MTBncDk0MjkxcHBoMw==" class="instagram" target="_blank" title="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <!-- ADDED: TikTok with logo -->
+                        <a href="https://www.tiktok.com/@aptechconsulting?_r=1&_t=ZS-92mGrlAtH67" class="tiktok" target="_blank" title="TikTok">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                        <!-- ADDED: WhatsApp icon -->
+                        <a href="https://wa.me/27737840772" class="whatsapp" target="_blank" title="WhatsApp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <nav class="footer-menu">
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="more_about_us.html">About Us</a></li>
+                            <!-- UPDATED: Services link with class for specific hover -->
+                            <li><a href="our_focus.html" class="services-link">Services</a></li>
+                            <li><a href="contact_form.html">Contact Us</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Our Location</h3>
+                    <div class="footer-contact">
+                        <span>📍</span>
+                        <span>A.P Tech Consulting Services<br>Durban<br>ZA</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <!-- MODIFIED: Updated link to Ts_and_Cs.html -->
+                <p>© 2026, A.P Tech Consulting Services. <a href="Ts_and_Cs.html" style="color: white; text-decoration: underline;">Privacy | Terms & Conditions</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const mainNav = document.querySelector('.main-nav');
+        
+        mobileMenuBtn.addEventListener('click', function() {
+            mainNav.classList.toggle('active');
+            this.textContent = mainNav.classList.contains('active') ? '✕' : '☰';
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.main-nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                mainNav.classList.remove('active');
+                mobileMenuBtn.textContent = '☰';
+            });
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    e.preventDefault();
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
