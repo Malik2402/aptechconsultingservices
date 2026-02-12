@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing Guide - AP Tech Consulting Services</title>
+    <meta name="description" content="View our transparent pricing for remote support, repairs, data recovery, and business IT services in Durban, South Africa.">
+    <!-- Add Font Awesome for social media icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts for modern typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="icon" type="image/png" href="title_logo.png"/>
+    
+    <style>
+        /* RESET AND BASE STYLES - IMPORTANT FIXES */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html, body {
+            width: 100%;
+            overflow-x: hidden;
+            font-family: 'Inter', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #ffffff;
+        }
+        
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        ul {
+            list-style: none;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        
+        /* HEADER STYLES - EXACTLY AS PROVIDED */
+        header {
+            background-color: #05468e;
+            padding: 1px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .nav-container {
+            flex: 1;
+            display: flex;
+            justify-content: flex-end;
+        }
+        
+        .logo img {
+            height: 150px;
+            transition: height 0.3s ease;
+        }
+        
+        .main-nav ul {
+            display: flex;
+            gap: 30px;
+        }
+        
+        .main-nav a {
+            color: white;
+            font-weight: 700;
+            font-size: 16px;
+            letter-spacing: 0.5px;
+            position: relative;
+            padding: 5px 0;
+            text-transform: uppercase;
+            font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        }
+        
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap');
+        
+        .main-nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background-color: #0a94d6;
+            transition: width 0.3s ease;
+        }
+        
+        .main-nav a:hover::after {
+            width: 100%;
+        }
+        
+        .main-nav a:hover {
+            color: #0a94d6;
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+            z-index: 1001;
+        }
+        
+        /* PRICING PAGE STYLES - WHITE BACKGROUND */
+        .pricing-section {
+            padding: 160px 0 80px;
+            background-color: #ffffff;
+            position: relative;
+            margin-top: 0;
+        }
+        
+        .pricing-header {
+            text-align: center;
+            margin-bottom: 60px;
+            color: #1e293b;
+        }
+        
+        .pricing-header h1 {
+            font-size: 48px;
+            font-weight: 800;
+            margin-bottom: 16px;
+            letter-spacing: -0.5px;
+            font-family: 'Poppins', sans-serif;
+            color: #05468e;
+        }
+        
+        .pricing-header p {
+            font-size: 20px;
+            color: #64748b;
+            max-width: 600px;
+            margin: 0 auto;
+            font-weight: 400;
+        }
+        
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .pricing-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid #eef2f6;
+        }
+        
+        .pricing-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(5, 70, 142, 0.08);
+            border-color: #05468e20;
+        }
+        
+        .card-header {
+            background: #f8fafc;
+            color: #05468e;
+            padding: 24px 20px;
+            text-align: center;
+            border-bottom: 3px solid #05468e;
+        }
+        
+        .card-header h2 {
+            font-size: 26px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            font-family: 'Poppins', sans-serif;
+            letter-spacing: -0.3px;
+            color: #05468e;
+        }
+        
+        .card-header i {
+            font-size: 32px;
+            margin-bottom: 12px;
+            color: #05468e;
+        }
+        
+        .card-badge {
+            background: #05468e;
+            color: white;
+            display: inline-block;
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-top: 10px;
+        }
+        
+        .card-body {
+            padding: 28px 24px;
+            flex: 1;
+            background: white;
+        }
+        
+        .service-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            padding: 12px 0;
+            border-bottom: 1px solid #edf2f7;
+        }
+        
+        .service-item:last-child {
+            border-bottom: none;
+        }
+        
+        .service-name {
+            font-weight: 600;
+            color: #1e293b;
+            font-size: 16px;
+        }
+        
+        .service-price {
+            font-weight: 700;
+            color: #05468e;
+            font-size: 18px;
+            white-space: nowrap;
+            margin-left: 16px;
+        }
+        
+        .note {
+            background: #f8fafc;
+            padding: 16px;
+            border-radius: 12px;
+            margin-top: 20px;
+            font-size: 14px;
+            color: #475569;
+            border-left: 4px solid #05468e;
+            font-weight: 500;
+        }
+        
+        .note i {
+            margin-right: 8px;
+            color: #05468e;
+        }
+        
+        .custom-quote {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            color: #1e293b;
+            padding: 40px;
+            border-radius: 20px;
+            margin-top: 40px;
+            text-align: center;
+            border-top: 4px solid #05468e;
+        }
+        
+        .custom-quote h3 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            font-family: 'Poppins', sans-serif;
+            color: #05468e;
+        }
+        
+        .custom-quote p {
+            font-size: 18px;
+            color: #64748b;
+            margin-bottom: 24px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: #05468e;
+            color: white;
+            padding: 14px 32px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 16px;
+            transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+            box-shadow: 0 4px 10px rgba(5, 70, 142, 0.2);
+        }
+        
+        .btn:hover {
+            transform: scale(1.05);
+            background: #0a5ea8;
+            box-shadow: 0 8px 20px rgba(5, 70, 142, 0.3);
+            color: white;
+        }
+        
+        .location-badge {
+            background: #f1f5f9;
+            color: #05468e;
+            padding: 10px 20px;
+            border-radius: 50px;
+            display: inline-block;
+            margin-top: 20px;
+            font-size: 15px;
+            font-weight: 600;
+        }
+        
+        .location-badge i {
+            margin-right: 8px;
+            color: #05468e;
+        }
+        
+        /* Data Recovery Special Banner */
+        .special-banner {
+            background: linear-gradient(135deg, #05468e, #0a5ea8);
+            color: white;
+            padding: 20px 30px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin: 30px 0 0 0;
+        }
+        
+        .special-banner span {
+            font-size: 18px;
+            font-weight: 600;
+        }
+        
+        .special-banner i {
+            margin-right: 10px;
+            color: #4ade80;
+        }
+        
+        .highlight {
+            background: #fbbf24;
+            color: #1e293b;
+            padding: 4px 12px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 14px;
+        }
+        
+        /* FOOTER - EXACTLY AS PROVIDED */
+        footer {
+            background-color: #05468e;
+            color: white;
+            padding: 60px 0 30px;
+            position: relative;
+            z-index: 3;
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-section {
+            flex: 1;
+            min-width: 250px;
+        }
+        
+        .footer-section h3 {
+            margin-bottom: 20px;
+            font-size: 20px;
+            color: white;
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+        
+        .footer-contact {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+        
+        .footer-contact a {
+            color: white;
+        }
+        
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-icons a {
+            display: inline-flex;
+            width: 40px;
+            height: 40px;
+            background-color: white;
+            color: #05468e;
+            border-radius: 50%;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+            font-size: 18px;
+        }
+        
+        .social-icons a:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .social-icons a.facebook:hover {
+            background-color: #1877f2;
+            color: white;
+        }
+        
+        .social-icons a.linkedin:hover {
+            background-color: #0077b5;
+            color: white;
+        }
+        
+        .social-icons a.instagram:hover {
+            background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+            color: white;
+        }
+        
+        .social-icons a.tiktok:hover {
+            background-color: #000000;
+            color: white;
+        }
+
+        .social-icons a.whatsapp:hover {
+            background-color: #25D366;
+            color: white;
+        }
+        
+        .footer-menu ul {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        
+        .footer-menu a {
+            color: white;
+        }
+        
+        .footer-menu a:hover {
+            color: #0a94d6;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 14px;
+        }
+        
+        .copyright a {
+            color: white;
+            text-decoration: underline;
+        }
+        
+        .copyright a:hover {
+            color: #0a94d6;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .main-nav {
+                display: none;
+                position: fixed;
+                top: 80px;
+                left: 0;
+                width: 100%;
+                background-color: #05468e;
+                padding: 20px;
+                z-index: 1000;
+            }
+            
+            .main-nav.active {
+                display: block;
+            }
+            
+            .main-nav ul {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .main-nav a {
+                font-size: 18px;
+                display: block;
+                padding: 10px 0;
+            }
+            
+            .pricing-section {
+                padding: 140px 0 60px;
+            }
+            
+            .pricing-header h1 {
+                font-size: 36px;
+            }
+            
+            .pricing-header p {
+                font-size: 18px;
+            }
+            
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .logo img {
+                height: 100px;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+            }
+            
+            .special-banner {
+                flex-direction: column;
+                text-align: center;
+                gap: 15px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .pricing-header h1 {
+                font-size: 28px;
+            }
+            
+            .card-header h2 {
+                font-size: 22px;
+            }
+            
+            .service-item {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 5px;
+            }
+            
+            .service-price {
+                margin-left: 0;
+                align-self: flex-start;
+            }
+            
+            .logo img {
+                height: 80px;
+            }
+            
+            .custom-quote {
+                padding: 30px 20px;
+            }
+            
+            .custom-quote h3 {
+                font-size: 24px;
+            }
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header - EXACTLY AS PROVIDED -->
+    <header id="mainHeader">
+        <div class="container header-container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="logo3.png" alt="A.P Tech Consulting Services Logo">
+                </a>
+            </div>
+            <div class="nav-container">
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="more_about_us.html">About Us</a></li>
+                        <li><a href="our_focus.html">Services</a></li>
+                        <li><a href="contact_form.html">Contact Us</a></li>
+                    </ul>
+                </nav>
+                <button class="mobile-menu-btn">☰</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- PRICING PAGE CONTENT - WHITE BACKGROUND, PHONE REPAIRS REMOVED -->
+    <section class="pricing-section">
+        <div class="container">
+            <div class="pricing-header">
+                <h1>💰 Transparent Pricing Guide</h1>
+                <p>No hidden fees · Quality guaranteed · Durban-based service</p>
+                <div class="location-badge">
+                    <i class="fas fa-map-marker-alt"></i> Serving Durban & surrounding areas
+                </div>
+            </div>
+            
+            <!-- FIRST ROW: REMOTE SUPPORT + REPAIRS + DATA RECOVERY -->
+            <div class="pricing-grid">
+                <!-- OVER-THE-PHONE / REMOTE SUPPORT -->
+                <div class="pricing-card">
+                    <div class="card-header">
+                        <i class="fas fa-headset"></i>
+                        <h2>📞 Remote Support</h2>
+                        <div class="card-badge">Fast help from home</div>
+                    </div>
+                    <div class="card-body">
+                        <div class="service-item">
+                            <span class="service-name">Basic Remote Support (30-45 min)</span>
+                            <span class="service-price">R150 - R300</span>
+                        </div>
+                        <div class="service-item">
+                            <span class="service-name">Password Reset / Account Recovery</span>
+                            <span class="service-price">R150 - R250</span>
+                        </div>
+                        <div class="service-item">
+                            <span class="service-name">Boot Loop / Startup Issues</span>
+                            <span class="service-price">R200 - R300</span>
+                        </div>
+                        <div class="service-item">
+                            <span class="service-name">Blank Screen / No Display</span>
+                            <span class="service-price">R200 - R300</span>
+                        </div>
+                        <div class="service-item">
+                            <span class="service-name">Device Not Powering On</span>
+                            <span class="service-price">R150 - R250</span>
+                        </div>
+                        <div class="service-item">
+                            <span class="service-name">Initial Diagnostic / Consultation</span>
+                            <span class="service-price">R100 - R200</span>
+                        </div>
+                        <div class="note">
+                            <i class="fas fa-check-circle"></i> Diagnostic fee waived if repair proceeds
+                        </div>
+                    </div>
+                </div>
+
+                <!-- UPGRADES & GENERAL REPAIRS -->
+                <div class="pricing-card">
+                    <div class="card-header">
+                        <i class="fas fa-tools"></i>
+                        <h2>🔧 Repairs & Upgrades</h2>
+                        <div class="card-badge">In-shop · Durban</div>
+                    </div>
+                    <div class="card-body">
+                        <div class="service-item">
+                            <span class="service-name">Full Device Diagnostic</span>
+                            <span class="service-price">R200 - R300</span>
+                        </div>
+                        <div class="service-item">
+                            <span class="service-name">RAM Upgrade (Labour)</span>
+                            <span class="service-price">R250 - R500</span>
+                        </div>
+                        <div class="service-item">
+                            <span class="service-name">SSD Upgrade / Installation</span>
+                            <span class="service-price">R600 - R900</span>
+                        </div>
+                        <div class="service-item">
+                            <span class="service-name">OS Reinstallation / System Reset</span>
+                            <span class="service-price">R350 - R450</span>
+                        </div>
+                        <div class="service-item">
+                            <span class="service-name">Performance Optimization</span>
+                            <span class="service-price">R300 - R450</span>
+                        </div>
+                        <div class="service-item">
+                            <span class="service-name">Overheating Fix (Cleaning + Paste)</span>
+                            <span class="service-price">R350 - R600</span>
+                        </div>
+                        <div class="service-item">
+                            <span class="service-name">General Device Servicing</span>
+                            <span class="service-price">R300 - R600</span>
+                        </div>
+                        <div class="note">
+                            <i class="fas fa-info-circle"></i> Hardware parts quoted separately
+                        </div>
+                    </div>
+                </div>
+
+                <!-- DATA RECOVERY SERVICES -->
+                <div class="pricing-card">
+                    <div class="card-header">
+                        <i class="fas fa-database"></i>
+                        <h2>💾 Data Recovery</h2>
+                        <div class="card-badge">No data, no charge</div>
+                    </div>
+                    <div class="card-body">
+                        <div class="service-item">
+                            <span class="service-name">Basic Logical Recovery</span>
+                            <span class="service-price">R800 - R1,500</span>
+                        </div>
+                        <div class="service-item">
+                            <span class="service-name">Moderate Recovery (Corrupt OS)</span>
+                            <span class="service-price">R1,500 - R2,500</span>
+                        </div>
+                        <div class="service-item">
+                            <span class="service-name">Advanced / Large Storage</span>
+                            <span class="service-price">R3,000+</span>
+                        </div>
+                        <div class="special-banner">
+                            <span><i class="fas fa-shield-alt"></i> No data, no charge guarantee</span>
+                            <span class="highlight">You only pay if we recover</span>
+                        </div>
+                        <div class="note" style="margin-top: 20px;">
+                            <i class="fas fa-hdd"></i> Final pricing depends on storage size & damage level
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECOND ROW: BUSINESS IT + CONTACT CARD - PHONE REPAIRS REMOVED -->
+            <div class="pricing-grid">
+                <!-- SYSTEMS & BUSINESS SCALABILITY -->
+                <div class="pricing-card">
+                    <div class="card-header">
+                        <i class="fas fa-building"></i>
+                        <h2>🏢 Business IT Solutions</h2>
+                        <div class="card-badge">For startups & growing businesses</div>
+                    </div>
+                    <div class="card-body">
+                        <div class="service-item">
+                            <span class="service-name">Business IT Consultation</span>
+                            <span class="service-price">R350 - R600/hr</span>
+                        </div>
+                        <div class="service-item">
+                            <span class="service-name">Company System Setup</span>
+                            <span class="service-price">R1,500 - R5,000+</span>
+                        </div>
+                        <div class="service-item">
+                            <span class="service-name">Network & Workflow Optimization</span>
+                            <span class="service-price">Custom Quote</span>
+                        </div>
+                        <div class="service-item">
+                            <span class="service-name">Scaling Existing Systems</span>
+                            <span class="service-price">Custom Quote</span>
+                        </div>
+                        <div class="note">
+                            <i class="fas fa-rocket"></i> Special packages available for startups!
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CONTACT & INFO CARD -->
+                <div class="pricing-card">
+                    <div class="card-header">
+                        <i class="fas fa-clock"></i>
+                        <h2>⚡ Need a Custom Quote?</h2>
+                        <div class="card-badge">We're here to help</div>
+                    </div>
+                    <div class="card-body" style="display: flex; flex-direction: column; justify-content: center;">
+                        <div style="text-align: center; margin-bottom: 20px;">
+                            <i class="fas fa-envelope" style="font-size: 40px; color: #05468e; margin-bottom: 15px;"></i>
+                            <h3 style="color: #05468e; margin-bottom: 15px; font-size: 22px;">Get in Touch</h3>
+                            <p style="margin-bottom: 10px; color: #1e293b;"><strong>Email:</strong> aptechconsultingservices@gmail.com</p>
+                            <p style="margin-bottom: 20px; color: #1e293b;"><strong>WhatsApp:</strong> 073 784 0772</p>
+                            <a href="contact_form.html" class="btn">Request Quote</a>
+                        </div>
+                        <div class="note" style="text-align: center;">
+                            <i class="fas fa-map-pin"></i> Durban, South Africa
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CUSTOM QUOTE BANNER -->
+            <div class="custom-quote">
+                <i class="fas fa-hand-holding-usd" style="font-size: 48px; margin-bottom: 20px; color: #05468e;"></i>
+                <h3>Need a custom solution?</h3>
+                <p>We provide tailored quotes for complex projects, business systems, and volume repairs.</p>
+                <a href="contact_form.html" class="btn">
+                    <i class="fas fa-comment" style="margin-right: 8px;"></i> Contact Us for Custom Pricing
+                </a>
+            </div>
+            
+            <!-- IMPORTANT NOTES -->
+            <div style="margin-top: 40px; text-align: center; color: #64748b; padding: 20px; border-top: 1px solid #e2e8f0;">
+                <p style="font-size: 15px;">
+                    <i class="fas fa-check-circle" style="color: #05468e;"></i> All pricing is in South African Rand (ZAR) · 
+                    <i class="fas fa-check-circle" style="color: #05468e;"></i> Final quotes provided before work begins · 
+                    <i class="fas fa-check-circle" style="color: #05468e;"></i> Terms & Conditions apply
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer - EXACTLY AS PROVIDED -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Contact Information</h3>
+                    <div class="footer-contact">
+                        <span>📱</span>
+                        <span><a href="tel:+27737840772">(073) 784-0772</a></span>
+                    </div>
+                    <div class="footer-contact">
+                        <span>✉️</span>
+                        <span><a href="mailto:aptechconsultingservices@gmail.com">aptechconsultingservices@gmail.com</a></span>
+                    </div>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/share/17oed3v66h/" class="facebook" target="_blank" title="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/" class="linkedin" target="_blank" title="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://www.instagram.com/aptechconsultingservices?igsh=MTBncDk0MjkxcHBoMw==" class="instagram" target="_blank" title="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.tiktok.com/@aptechconsulting?_r=1&_t=ZS-92mGrlAtH67" class="tiktok" target="_blank" title="TikTok">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                        <a href="https://wa.me/27737840772" class="whatsapp" target="_blank" title="WhatsApp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <nav class="footer-menu">
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="more_about_us.html">About Us</a></li>
+                            <li><a href="our_focus.html">Services</a></li>
+                            <li><a href="contact_form.html">Contact Us</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Our Location</h3>
+                    <div class="footer-contact">
+                        <span>📍</span>
+                        <span>A.P Tech Consulting Services<br>Durban<br>ZA</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>© 2026, A.P Tech Consulting Services. <a href="Ts_and_Cs.html" style="color: white; text-decoration: underline;">Privacy | Terms & Conditions</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle - EXACTLY AS PROVIDED
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const mainNav = document.querySelector('.main-nav');
+        
+        mobileMenuBtn.addEventListener('click', function() {
+            mainNav.classList.toggle('active');
+            this.textContent = mainNav.classList.contains('active') ? '✕' : '☰';
+        });
+
+        document.querySelectorAll('.main-nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                mainNav.classList.remove('active');
+                mobileMenuBtn.textContent = '☰';
+            });
+        });
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    e.preventDefault();
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
